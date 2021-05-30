@@ -1,7 +1,7 @@
 ---
 layout: single
 title: Lame (HackTheBox) - WriteUp (by blu3ming)
-excerpt: "Writeup de la máquina Lame de la plataforma HackTheBpx. Nota: Puede incluir fallos y rabbit holes, los cuales se especifican, con el objetivo de que el lector no cometa los mismos errores que yo. Se recomienda leer el artículo completo antes de seguirlo al pie de la letra."
+excerpt: "Writeup de la máquina Lame de la plataforma HackTheBox. Nota: Puede incluir fallos y rabbit holes, los cuales se especifican, con el objetivo de que el lector no cometa los mismos errores que yo. Se recomienda leer el artículo completo antes de seguirlo al pie de la letra."
 date: 2021-05-30
 classes: wide
 header:

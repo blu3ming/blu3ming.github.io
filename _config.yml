@@ -16,14 +16,14 @@ minimal_mistakes_skin    : "dark" # "air", "aqua", "contrast", "dark", "dirt", "
 
 # Site Settings
 locale                   : "en-US"
-title                    : "blu3ming | Blog de ciberseguridad"
+title                    : "Blu3ming | Blog de ciberseguridad"
 title_separator          : "-"
 subtitle                 : # site tagline that appears below site title in masthead
-name                     : "blu3ming"
+name                     : "Blu3ming"
 description              : "Blog sobre ciberseguridad. Scripts y Writeups para máquinas de Vulnhub, TryHackMe y HackTheBox."
 url                      : "https://blu3ming.github.io"# the base hostname & protocol for your site e.g. "https://mmistakes.github.io"
 baseurl                  : # the subpath of your site, e.g. "/blog"
-repository               : # GitHub username/repo-name e.g. "mmistakes/minimal-mistakes"
+repository               : "blu3ming/blu3ming.github.io" # GitHub username/repo-name e.g. "mmistakes/minimal-mistakes"
 teaser                   : # path of fallback teaser image, e.g. "/assets/images/500x300.png"
 logo                     : # path of logo image to display in the masthead, e.g. "/assets/images/88x88.png"
 masthead_title           : # overrides the website title displayed in the masthead, use " " for no title
@@ -94,8 +94,8 @@ analytics:
 
 # Site Author
 author:
-  name             : "blu3ming"
-  avatar           : # path of avatar image, e.g. "/assets/images/bio-photo.jpg"
+  name             : "Blu3ming"
+  avatar           : "/assets/images/avatar.jpg" # path of avatar image, e.g. "/assets/images/bio-photo.jpg"
   bio              : "Computer Engineer. Amateur pentester. Cloud Computing by Google. Preparing eJPT."
   location         : "CDMX"
   uri              :

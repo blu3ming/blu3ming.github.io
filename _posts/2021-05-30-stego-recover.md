@@ -141,7 +141,7 @@ StegoRecover es una herramienta programada en Python que permite cargar un archi
 
 	[https://github.com/blu3ming/StegoRecover](https://github.com/blu3ming/StegoRecover)
 	
-[1]:/assets/images/stego-recover/portada.png
+[1]:/assets/images/stego-recover/1.png
 [2]:/assets/images/stego-recover/2.png
 [3]:/assets/images/stego-recover/3.png
 [4]:/assets/images/stego-recover/4.png

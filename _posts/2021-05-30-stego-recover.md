@@ -16,7 +16,9 @@ tags:
   - Esteganografía
 ---
 
-	![1]
+<p align="center">
+<img src="/assets/images/stego-recover/portada.png">
+</p>
 	
 StegoRecover es una herramienta programada en Python que permite cargar un archivo con datos ocultos (esteganografía) con **steghide**, más un diccionario de posibles contraseñas, y mediante un ataque de fuerza bruta, recuperar la contraseña de dicho archivo.
 

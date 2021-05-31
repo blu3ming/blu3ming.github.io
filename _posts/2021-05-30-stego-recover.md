@@ -5,7 +5,7 @@ excerpt: "StegoRecover es un script que permite recuperar, por medio de fuerza b
 date: 2021-05-30
 classes: wide
 header:
-  teaser: /assets/images/steg-hide/portada.png
+  teaser: /assets/images/stego-recover/portada.png
   teaser_home_page: true
 categories:
   - Scripts
@@ -16,7 +16,7 @@ tags:
   - Esteganografía
 ---
 
-	![portada]
+	![1]
 	
 StegoRecover es una herramienta programada en Python que permite cargar un archivo con datos ocultos (esteganografía) con **steghide**, más un diccionario de posibles contraseñas, y mediante un ataque de fuerza bruta, recuperar la contraseña de dicho archivo.
 

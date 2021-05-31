@@ -1,4 +1,4 @@
-2021-05-30-lame-writeup---
+---
 layout: single
 title: Kioptrix Level 1 (Vulnhub) - WriteUp (by blu3ming)
 excerpt: "Writeup de la máquina Kioptrix Nivel 1 de la plataforma Vunlhub. Nota: Puede incluir fallos y rabbit holes, los cuales se especifican, con el objetivo de que el lector no cometa los mismos errores que yo. Se recomienda leer el artículo completo antes de seguirlo al pie de la letra."

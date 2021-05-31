@@ -64,7 +64,7 @@ StegoRecover es una herramienta programada en Python que permite cargar un archi
 	
 	![6]
 	
-	**Nota: **Cabe destacar que, como el script ejecuta a nivel de sistema la herramiente **steghide**, es necesario que esta esté instalada en el sistema primero. Para hacerlo, basta con ejecutar en Linux el comando:
+	**Nota:** Cabe destacar que, como el script ejecuta a nivel de sistema la herramiente **steghide**, es necesario que esta esté instalada en el sistema primero. Para hacerlo, basta con ejecutar en Linux el comando:
 	
 	``sudo apt install steghide``
 	

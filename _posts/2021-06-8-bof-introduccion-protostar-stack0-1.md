@@ -19,7 +19,7 @@ tags:
 
 + **¿Qué es un Buffer Overflow?**
 
-	Cuando un programa se ejecuta en el sistema, este almacena un espacio de memoria para su ejecución (pila). Esta pila contiene las variables y datos que se vayan generando con la ejecución de dicho programa. Cuando ocurre un error de desbordamiento en este, y los datos que se almacenan en el buffer de la pila exceden su capacidad máxima, estos datos extras comienzan a sobreescribir otras secciones de la memoria, generando un fallo, dado que el programa no sabe qué hacer a continuación.
+	Cuando un programa se ejecuta en el sistema, este almacena un espacio de memoria para su ejecución (pila). Esta pila contiene las variables y datos que se van generando con la ejecución de dicho programa. Cuando ocurre un error de desbordamiento en este, y los datos que se almacenan en el buffer de la pila exceden su capacidad máxima, estos datos extras comienzan a sobreescribir otras secciones de la memoria, generando un fallo, dado que el programa no sabe qué hacer a continuación.
 	
 	![1]
 	
@@ -27,7 +27,7 @@ tags:
 	
 	![2]
 	
-	Pero, ¿qué pasaría si podemos aprovechar esta vulnerabilidad para sobreescribir en el EIP la dirección de memoria de una instrucción que queramos ejecutar en el sistema? Este es el objetivo de los ataques por Buffer Overflow, inyectar código malicioso en alguna parte de la memoris, y luego tratar de sobreescribir el EBP para que apunte a dicho código malicioso. De esta forma, el buffer se desborda, el programa continua su secuencia de ejecución por donde nosotros le indicamos, y vulneramos la máquina víctima.
+	Pero, ¿qué pasaría si podemos aprovechar esta vulnerabilidad para sobreescribir en el EIP la dirección de memoria de una instrucción que queramos ejecutar en el sistema? Este es el objetivo de los ataques por Buffer Overflow, inyectar código malicioso en alguna parte de la memoria, y luego tratar de sobreescribir el EBP para que apunte a dicho código malicioso. De esta forma, el buffer se desborda, el programa continua su secuencia de ejecución por donde nosotros le indicamos, y vulneramos la máquina víctima.
 	
 	Nota: Para continuar con el desarrollo de las actividades, es necesario contar con un conocimiento básico de programación en C y en lenguaje ensamblador. Así como lenguaje Python para el desarrollo de scripts y un conocimiento de comandos en Linux básico.
 
@@ -35,7 +35,7 @@ tags:
 
 [https://www.vulnhub.com/entry/exploit-exercises-protostar-v2,32/](https://www.vulnhub.com/entry/exploit-exercises-protostar-v2,32/)
 
-	Su instalación en VMWare se da creando una nueva máquina, empleando una configuración típica:
++	Su instalación en VMWare se da creando una nueva máquina, empleando una configuración típica:
 	
 	![3]
 	

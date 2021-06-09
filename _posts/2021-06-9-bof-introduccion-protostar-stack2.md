@@ -1,11 +1,11 @@
 ---
 layout: single
-title: Introducción al Buffer Overflow - Ejercicios de Protostar: stack2
-excerpt: "Protostar es un hacker que desarrolló una máquina virtual con ejercicios para entender el exploiting de binarios en Linux. Iniciamos esta introducción con la resolución de sus ejercicios stack0 y stack1."
+title: Introducción al Buffer Overflow - Ejercicio de Protostar stack2
+excerpt: "Continuamos esta introducción por el Buffer Overflow, ahora con con la resolución del ejercicio stack2, empleando todo lo que hemos aprendido hasta ahora."
 date: 2021-06-9
 classes: wide
 header:
-  teaser: /assets/images/bof-intro-stack0-stack1/portada.png
+  teaser: /assets/images/bof-intro-stack2/portada.png
   teaser_home_page: true
 categories:
   - Buffer Overflow

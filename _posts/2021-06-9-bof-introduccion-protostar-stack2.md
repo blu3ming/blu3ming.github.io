@@ -13,7 +13,6 @@ categories:
 tags:
   - Blog
   - Buffer Overflow
-  - Guía
   - Exploiting
 ---
 

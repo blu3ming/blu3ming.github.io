@@ -27,7 +27,7 @@ tags:
 	
 	![2]
 	
-	Pero, ¿qué pasaría si podemos aprovechar esta vulnerabilidad para sobreescribir en el EIP la dirección de memoria de una instrucción que queramos ejecutar en el sistema? Este es el objetivo de los ataques por Buffer Overflow, inyectar código malicioso en alguna parte de la memoria, y luego tratar de sobreescribir el EBP para que apunte a dicho código malicioso. De esta forma, el buffer se desborda, el programa continua su secuencia de ejecución por donde nosotros le indicamos, y vulneramos la máquina víctima.
+	Pero, ¿qué pasaría si podemos aprovechar esta vulnerabilidad para sobreescribir en el EIP la dirección de memoria de una instrucción que queramos ejecutar en el sistema? Este es el objetivo de los ataques por Buffer Overflow, inyectar código malicioso en alguna parte de la memoria, y luego tratar de sobreescribir el EIP para que apunte a dicho código malicioso. De esta forma, el buffer se desborda, el programa continua su secuencia de ejecución por donde nosotros le indicamos, y vulneramos la máquina víctima.
 	
 	Nota: Para continuar con el desarrollo de las actividades, es necesario contar con un conocimiento básico de programación en C y en lenguaje ensamblador. Así como lenguaje Python para el desarrollo de scripts y un conocimiento de comandos en Linux básico.
 

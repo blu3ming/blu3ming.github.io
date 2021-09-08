@@ -16,6 +16,8 @@ tags:
   - Guía
   - Walkthrough
 ---
+
++ **Información de la máquina**
 	
 	![0]
 

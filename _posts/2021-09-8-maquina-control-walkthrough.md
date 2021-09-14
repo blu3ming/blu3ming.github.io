@@ -79,7 +79,7 @@ tags:
 	
 	![11]
 	
-+ Estando desde Burpsuite, vemos que una simple consulta por el nombre de la base de datos es respondida. La database se llama **warehouse**. Sin embargo, esta contiene elementos de la misma web consernientes al inventario de los productos que venden. Es poco probable que haya usuarios dentro, por lo que buscamos por otras bases de datos.
++ Estando desde Burpsuite, vemos que una simple consulta por el nombre de la base de datos es respondida. La database se llama **warehouse**. Sin embargo, esta contiene elementos de la misma web concernientes al inventario de los productos que venden. Es poco probable que haya usuarios dentro, por lo que buscamos por otras bases de datos.
 
 	![12]
 
@@ -163,7 +163,7 @@ tags:
 
 	![23]
 	
-	Para esto, primero debemos hacer un tratamiento de estas credenciales que hemos obtenido. Todo este proceso debe hacerse desde una terminal de powershell. Como con e netcat obtuvimos una cmd, solo basta con escribir **powershell** para acceder a esta terminal:
+	Para esto, primero debemos hacer un tratamiento de estas credenciales que hemos obtenido. Todo este proceso debe hacerse desde una terminal de powershell. Como con el netcat obtuvimos una cmd, solo basta con escribir **powershell** para acceder a esta terminal:
 	
 	```
 	$user = 'Fidelity\Hector'  //Este comando contempla HOST\USUARIO, donde el host puede encontrarse con el comando hostname

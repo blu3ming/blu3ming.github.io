@@ -126,7 +126,7 @@ tags:
 [9]:/assets/images/knife-htb/9.png
 [10]:/assets/images/knife-htb/10.png
 [11]:/assets/images/knife-htb/11.png
-[12]:/assets/images/knife-htb/12.jpg
+[12]:/assets/images/knife-htb/12.png
 [13]:/assets/images/knife-htb/13.png
 [14]:/assets/images/knife-htb/14.jpg
 [15]:/assets/images/knife-htb/15.png

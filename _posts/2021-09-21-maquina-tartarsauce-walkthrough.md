@@ -5,7 +5,7 @@ excerpt: "Resolución de la máquina TarTarSauce, la cual figura en la plataform
 date: 2021-09-21
 classes: wide
 header:
-  teaser: /assets/images/tartarsasuce/portada.png
+  teaser: /assets/images/tartarsauce/portada.png
   teaser_home_page: true
 categories:
   - HTB
@@ -209,39 +209,39 @@ tags:
 
 	![35]
 	
-[0]:/assets/images/tartarsasuce/0.png
-[1]:/assets/images/tartarsasuce/1.png
-[2]:/assets/images/tartarsasuce/2.png
-[3]:/assets/images/tartarsasuce/3.png
-[4]:/assets/images/tartarsasuce/4.png
-[5]:/assets/images/tartarsasuce/5.png
-[6]:/assets/images/tartarsasuce/6.png
-[7]:/assets/images/tartarsasuce/7.png
-[8]:/assets/images/tartarsasuce/8.png
-[9]:/assets/images/tartarsasuce/9.png
-[10]:/assets/images/tartarsasuce/10.png
-[11]:/assets/images/tartarsasuce/11.png
-[12]:/assets/images/tartarsasuce/12.png
-[13]:/assets/images/tartarsasuce/13.png
-[14]:/assets/images/tartarsasuce/14.png
-[15]:/assets/images/tartarsasuce/15.png
-[16]:/assets/images/tartarsasuce/16.png
-[17]:/assets/images/tartarsasuce/17.png
-[18]:/assets/images/tartarsasuce/18.png
-[19]:/assets/images/tartarsasuce/19.png
-[20]:/assets/images/tartarsasuce/20.png
-[21]:/assets/images/tartarsasuce/21.png
-[22]:/assets/images/tartarsasuce/22.png
-[23]:/assets/images/tartarsasuce/23.png
-[24]:/assets/images/tartarsasuce/24.png
-[25]:/assets/images/tartarsasuce/25.png
-[26]:/assets/images/tartarsasuce/26.png
-[27]:/assets/images/tartarsasuce/27.png
-[28]:/assets/images/tartarsasuce/28.png
-[29]:/assets/images/tartarsasuce/29.png
-[30]:/assets/images/tartarsasuce/30.png
-[31]:/assets/images/tartarsasuce/31.png
-[32]:/assets/images/tartarsasuce/32.png
-[33]:/assets/images/tartarsasuce/33.png
-[34]:/assets/images/tartarsasuce/34.png
-[35]:/assets/images/tartarsasuce/35.png
+[0]:/assets/images/tartarsauce/0.png
+[1]:/assets/images/tartarsauce/1.png
+[2]:/assets/images/tartarsauce/2.png
+[3]:/assets/images/tartarsauce/3.png
+[4]:/assets/images/tartarsauce/4.png
+[5]:/assets/images/tartarsauce/5.png
+[6]:/assets/images/tartarsauce/6.png
+[7]:/assets/images/tartarsauce/7.png
+[8]:/assets/images/tartarsauce/8.png
+[9]:/assets/images/tartarsauce/9.png
+[10]:/assets/images/tartarsauce/10.png
+[11]:/assets/images/tartarsauce/11.png
+[12]:/assets/images/tartarsauce/12.png
+[13]:/assets/images/tartarsauce/13.png
+[14]:/assets/images/tartarsauce/14.png
+[15]:/assets/images/tartarsauce/15.png
+[16]:/assets/images/tartarsauce/16.png
+[17]:/assets/images/tartarsauce/17.png
+[18]:/assets/images/tartarsauce/18.png
+[19]:/assets/images/tartarsauce/19.png
+[20]:/assets/images/tartarsauce/20.png
+[21]:/assets/images/tartarsauce/21.png
+[22]:/assets/images/tartarsauce/22.png
+[23]:/assets/images/tartarsauce/23.png
+[24]:/assets/images/tartarsauce/24.png
+[25]:/assets/images/tartarsauce/25.png
+[26]:/assets/images/tartarsauce/26.png
+[27]:/assets/images/tartarsauce/27.png
+[28]:/assets/images/tartarsauce/28.png
+[29]:/assets/images/tartarsauce/29.png
+[30]:/assets/images/tartarsauce/30.png
+[31]:/assets/images/tartarsauce/31.png
+[32]:/assets/images/tartarsauce/32.png
+[33]:/assets/images/tartarsauce/33.png
+[34]:/assets/images/tartarsauce/34.png
+[35]:/assets/images/tartarsauce/35.png

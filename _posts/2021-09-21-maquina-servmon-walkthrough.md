@@ -295,7 +295,7 @@ tags:
 	
 	``PT.exe -s 10.10.14.22 -p 8443``
 	
-	Con esto, ya tendremos el port forwarding necesario para acceder el NSClient++. Accedemos desde **Chrome** esta vez (no pude probarlo con Firefoz, así que no descarto la idea de que quizá los errores previos se dieran por no usar el navegador adecuado).
+	Con esto, ya tendremos el port forwarding necesario para acceder el NSClient++. Accedemos desde **Chrome** esta vez (no pude probarlo con FirefoX, así que no descarto la idea de que quizá los errores previos se dieran por no usar el navegador adecuado).
 	
 	![40]
 	

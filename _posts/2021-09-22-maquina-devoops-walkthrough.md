@@ -63,7 +63,7 @@ tags:
 	
 	![7]
 	
-	Esto no ocasiona nada en el sitio web, solo redirige al mismo sin mostrar información de error o éxito alguno. Si intentamos poner un archivo XML mal formado (es decir, sin las etiquetas solicitadas), veremos lo siguiente:
+	Este archivo no ocasiona nada en el sitio web, solo redirige al mismo sin mostrar información de error o éxito alguno. Si intentamos poner un archivo XML mal formado (es decir, sin las etiquetas solicitadas), veremos lo siguiente:
 	
 	![8]
 	
@@ -102,7 +102,7 @@ tags:
 	
 	![13]
 	
-	Con la ruta de trabajo del usuario **roosa** en mente, podemos intentar listar su **id_rsa** en caso de que esta exista, la cual debería estar el el directorio **.ssh**.
+	Con la ruta de trabajo del usuario **roosa** en mente, podemos intentar listar su **id_rsa** en caso de que esta exista, la cual debería estar en el directorio **.ssh**.
 	
 	![14]
 	

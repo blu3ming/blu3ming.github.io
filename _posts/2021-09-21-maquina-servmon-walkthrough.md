@@ -258,7 +258,7 @@ tags:
 	
 	Nota: Si la página web se queda en **Reloading...** por mucho tiempo, debemos reiniciar la máquina e intentarlo de nuevo. A esto me refería cuando decía que el software es demasiado inestable, y esto no funciona a la primera. El objetivo consiste en dirigirse, una vez termine el **"Reload"** de la página, a la sección de **Queries** y desde ahí ejecutar el script que acabamos de crear.
 	
-	Para este momento, se intentó este procedimiento una cantidad de 5 veces, y por desgracia, ninguna funcionó. La página se quedaba colgada, no terminaba de cargar el script, e incluso, el netcat era borrado de la máquina víctima. En un punto se logró ejecutar el script, pero este no finalizao de manera exitosa ya que la máquina detectó el **netcat** como malicioso y lo borraba cada vez que lo volvíamos a subir.
+	Para este momento, se intentó este procedimiento una cantidad de 5 veces, y por desgracia, ninguna funcionó. La página se quedaba colgada, no terminaba de cargar el script, e incluso, el netcat era borrado de la máquina víctima. En un punto se logró ejecutar el script, pero este no finalizó de manera exitosa ya que la máquina detectó el **netcat** como malicioso y lo borraba cada vez que lo volvíamos a subir.
 
 + Llegado a este punto pensé en rendirme, sin embargo, luego de investigar sobre el tema me encontré con que es posible llevar a cabo este ataque desde una máquina Windows con ayuda del software **VbRev**. Este es una especie de netcat que el Defender no detecta como malicioso, y lo mejor de todo es que cuenta con una interfaz gráfica que nos permite ejecutar comandos, listar archivos, subir archivos, descargarlos, listar procesos, entre muchas utilidades más. No perdía nada con intentarlo, y a cambio, aprendería a realizar pentesting desde una máquina Windows.
 
@@ -317,9 +317,9 @@ tags:
 	
 	Dado que este programa cuenta con un explorador de archivos, solo debemos ir a la carpeta del usuario administrador para obtener la flag de root.
 	
-	![44]
-	
 	![45]
+	
+	![46]
 	
 	Con esto, hemos finalizado de comprometer la máquina y aprendido a hacer esta etapa del pentesting desde un sistema Windows. Sin duda, algo que nos servirá a futuro.
 	

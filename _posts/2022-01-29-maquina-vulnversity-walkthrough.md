@@ -17,6 +17,9 @@ tags:
   - Walkthrough
 ---
 
+# Aclaración inicial
+La máquina se encuentra en la plataforma [TryHackMe](https://tryhackme.com/room/vulnversity) con instrucciones bastante detalladas para comprometerla paso a paso. Sin embargo, el objetivo de esta guía y de las siguientes es que nosotros intentemos comprometer el sistema sin la necesidad de ver las instrucciones que nos da la plataforma. Dicho esto, puedes seguir esta guía o la de TryHackMe, ya que ambas tienen mucho que ofrecer en cuanto a conocimientos.
+
 # Reconocimiento
 Por medio de un escaneo de puertos con nmap, detectamos aquellos que se encuentren activos con un estatus **open** en la máquina víctima:
 

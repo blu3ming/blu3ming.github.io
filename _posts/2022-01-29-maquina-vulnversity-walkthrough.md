@@ -168,7 +168,7 @@ Básicamente, requerimos crear un nuevo servicio que tenga la siguiente estructu
 
 ![20]
 
-Donde en la sección **ExecStart** colocaremos el comando que queremos que el usuario privilegiado ejecute por nosotros. Puede ser una reverse shell, pero en mi caso, volveré SUID al binario /bin/bash para acceder directamente desde la máquina comoo **root**:
+Donde en la sección **ExecStart** colocaremos el comando que queremos que el usuario privilegiado ejecute por nosotros. Puede ser una reverse shell, pero en mi caso, volveré SUID al binario /bin/bash para acceder directamente desde la máquina como **root**:
 
 	chmod +s /bin/bash
 	
@@ -177,7 +177,7 @@ Ahora, solo debemos ejecutar los siguientes comandos en Linux:
 	/bin/systemctl enable /dev/shm/root.service
 	/bin/systemctl start root
 	
-Recuerda que el archivo root.service puede llamarse como quieras (siempre y cuando coloques el mismo nombre en los comandos) y que debe estar ubicado en un directorio donde tengas permisos de escritura. En este caso, se colocó en el directorio **temp**.
+Recuerda que el archivo **root.service** puede llamarse como quieras (siempre y cuando coloques el mismo nombre en los comandos) y que debe estar ubicado en un directorio donde tengas permisos de escritura. En este caso, se colocó en el directorio **tmp**.
 
 ![21]
 

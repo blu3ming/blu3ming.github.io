@@ -158,7 +158,7 @@ Buscamos ahora por **binarios SUID**, y nos encontramos con lo siguiente:
 
 ![19]
 
-#Abuso del binario systemctl con SUID
+# Abuso del binario systemctl con SUID
 El binario **systemctl** nos permitiría escalar privilegios dependiendo de cómo enfoquemos el ataque. **GTFObins** nos da instrucciones sobre cómo emplear este binario, pero yo prefiero la explicación de esta [página web](https://gist.github.com/A1vinSmith/78786df7899a840ec43c5ddecb6a4740).
 
 Básicamente, requerimos crear un nuevo servicio que tenga la siguiente estructura:

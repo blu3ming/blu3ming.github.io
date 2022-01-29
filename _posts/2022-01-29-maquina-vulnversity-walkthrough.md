@@ -185,7 +185,7 @@ Por último, solo debemos acceder a la bash como root empleando el comando:
 
 	bash -p
 	
-Como podemso observar, ya somos usuario **root** y podemos ver la flag correspondiente.
+Como podemos observar, ya somos usuario **root** y podemos ver la flag correspondiente.
 
 ![21]
 	

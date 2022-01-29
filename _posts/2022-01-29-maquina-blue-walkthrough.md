@@ -130,6 +130,8 @@ Al haber ejecutado el script, veremos que recibimos una reverse shell desde netc
 
 ![16]
 
+Nota Final: EternalBlue es un exploit bastante potente que puede llegar a tirar el servidor donde se haya ejecutado. Si no llegas a obtener una reverse shell, lo mejor es reiniciar la máquina víctima y repetir todo el procedimiento de creación de shellcodes y explotación.
+
 [1]:/assets/images/blue/1.png
 [2]:/assets/images/blue/2.png
 [3]:/assets/images/blue/3.png

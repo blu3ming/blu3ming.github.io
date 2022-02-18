@@ -5,7 +5,7 @@ excerpt: "La máquina GameZone nos permitirá practicar inyección SQL y será n
 date: 2022-02-18
 classes: wide
 header:
-  teaser: /assets/images/gamezone/portada.png
+  teaser: /assets/images/gamezone/portada.jpg
   teaser_home_page: true
 categories:
   - THM

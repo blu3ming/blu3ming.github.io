@@ -5,7 +5,7 @@ excerpt: "Nuevamente nos moveremos de TryHackMe para intentar comprometer máqui
 date: 2022-02-22
 classes: wide
 header:
-  teaser: /assets/images/inoculation/portada.png
+  teaser: /assets/images/inoculation/portada.jpg
   teaser_home_page: true
 categories:
   - Comunidad

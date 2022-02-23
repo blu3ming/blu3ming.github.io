@@ -2,7 +2,7 @@
 layout: single
 title: Máquina Inoculation - ReadySetExploit (OSCP Style)
 excerpt: "Nuevamente nos moveremos de TryHackMe para intentar comprometer máquinas hechas por la comunidad. En este caso, la máquina Inoculation de ReadySetExploit nos permitirá aprender otro modo de explotar una SQLi."
-date: 2022-02-24
+date: 2022-02-22
 classes: wide
 header:
   teaser: /assets/images/inoculation/portada.png

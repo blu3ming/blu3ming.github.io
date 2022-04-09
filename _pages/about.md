@@ -1,7 +1,7 @@
 ---
 title: "Sobre mí"
 layout: about
-permalink: /abour/
+permalink: /about/
 author_profile: true
 ---
 Prueba

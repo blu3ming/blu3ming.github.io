@@ -2,10 +2,10 @@
 layout: single
 title: Máquina Overpass 2 (Hacked) - TryHackMe (OSCP Style) (Offensive Pentesting Path)
 excerpt: "Retomando nuevamente el pentesting, y siguiendo con el path Offensive Security de TryHackMe, hoy toca realizar la máquina Overpass 2 - Hacked. Esta máquina es guiada en el sentido de seguir instrucciones, pero no dice cómo hacerlo. Trataremos de darle solución."
-date: 2022-07-07
+date: 2022-07-08
 classes: wide
 header:
-  teaser: /assets/images/overpass-2/portada.jpg
+  teaser: /assets/images/overpass-2/portada.png
   teaser_home_page: true
 categories:
   - Comunidad

@@ -5,7 +5,7 @@ excerpt: "He estado inactivo desde hace cinco meses, pero no pasaron en balde. D
 date: 2022-07-07
 classes: wide
 header:
-  teaser: /assets/images/az-900/az-900.jpg
+  teaser: /assets/images/az-900/az-900.png
   teaser_home_page: true
 categories:
   - Comunidad

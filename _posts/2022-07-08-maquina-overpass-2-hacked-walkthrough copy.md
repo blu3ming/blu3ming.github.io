@@ -19,6 +19,7 @@ tags:
   - backdoor
   - ssh
   - suid
+  - bash
 ---
 
 # Introducción

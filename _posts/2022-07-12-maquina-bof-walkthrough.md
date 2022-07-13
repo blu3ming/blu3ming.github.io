@@ -234,6 +234,19 @@ Borramos también dichos caracteres de la cadena *payload* enviada en el script 
 
 Cuando la salida nos indique **Unmodified**, quiere decir que ya no encontró más badchars aparte de los ya detectados. Esto nos indica a su vez que aquellos caracteres que descartamos como falsos positivos realmente lo eran; de lo contrario, hubieran vuelto a aparacer aquí y tendríamos que repetir todo el proceso nuevamente hasta que obtengamos el *Unmodified*.
 
+Esto sucede en el caso del ejercicio 9 **OVERFLOW9**, donde tras una segunda comparativa nos encontraremos con que los badchars siguen apareciendo (aunque ya los hayamos eliminado), otros ya no, e incluso podríamos ver nuevos *badchars*. Es importante ver si estos últimos son consecutivos de alguno que se haya considerado en su momento falso positivo:
+
+	Primera pasada (comparativa): \x00\x04\x05\x3e\x3f\xe1\xe2
+	Eliminando los posibles falsos positivos: \x00\x04\x3e\xe1
+	Segunda pasada (comparativa): \x00\x04\x3e\x3f\x40\xe1
+	
+Como podemos observar, continua apareciando el \x3f que habíamos considerado como falso positivo (los demás ya no aparecen). Nótese cómo el nuevo caracter \x40 es consecutivo de este; por lo tanto, existe una alta probabilidad de que el \x40 sea un nuevo falso positivo, volviendo al \x3f un badchar más que no se tenía contemplado:
+
+	Eliminando los posibles falsos positivos (segunda vez): \x00\x04\x3e\x3f\xe1
+	Tercera pasada (comparativa): Unmodified
+	
+Esto se tiene que repetir en caso de que aún aparecieran más; pero al menos en este caso, al obtener el **Unmodified**, podemos asegurar haberlos encontrado a todos.
+
 # 5. Búsqueda del JMP ESP
 Recordemos que no basta con colocar la dirección del ESP en el EIP para poder realizar el salto y ejecutar nuestro payload (el cual se almacena en ESP). El sistema simplemente no puede realizar tal ejecución. Para resolverlo, requerimos de la instrucción en ensamblador JMP, la cual realiza un salto a una dirección de memoria que le proporcionemos; en nuestro caso, necesitamos que haga ese salto al ESP: JMP ESP.
 

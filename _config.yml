@@ -25,7 +25,7 @@ baseurl                  : # the subpath of your site, e.g. "/blog"
 repository               : "blu3ming/blu3ming.github.io" # GitHub username/repo-name e.g. "mmistakes/minimal-mistakes"
 logo                     : #
 teaser                   : # path of fallback teaser image, e.g. "/assets/images/500x300.png"
-masthead_title           : "Blog de Ciberseguridad"
+masthead_title           : "Blu3ming's Blog"
 breadcrumbs              : true # true, false (default)
 words_per_minute         : 200
 comments:
@@ -104,7 +104,7 @@ analytics:
 author:
   name             : "Blu3ming"
   avatar           : "/assets/images/avatar.jpg" # path of avatar image, e.g. "/assets/images/bio-photo.jpg"
-  bio              : "Computer Engineer. Amateur pentester. Cloud Computing by Google. Preparing eJPT."
+  bio              : "Computer Engineer | Pentester | AZ-900 | Red Team | Always trying to learn something new | Preparing eJPT"
   location         : "CDMX"
   uri              :
   home             : # null (default), "absolute or relative url to link to author home"
@@ -126,7 +126,7 @@ author:
   stackoverflow    : # "123456/username" (the last part of your profile url, e.g. https://stackoverflow.com/users/123456/username)
   steam            : # "steamId" (the last part of your profile url, e.g. https://steamcommunity.com/id/steamId/)
   tumblr           :
-  twitter          :
+  twitter          : "blu3ming314"
   vine             :
   weibo            :
   xing             :

@@ -1,11 +1,11 @@
 ---
 layout: single
 title: Máquina Brainstorm - TryHackMe (OSCP Style) (Offensive Pentesting Path)
-excerpt: "Esta etapa del path consiste en aprender y practicar el buffer overflow de sistemas Windows. La primera room consta de un binario especialmente creado para practicar el buffer overflow de cara a la certificación OSCP por medio de 10 ejercicios. En este manual solo lo realizaremos para uno de ellos."
-date: 2022-07-12
+excerpt: "Esta máquina sigue el apartado del Buffer Overflow del path. Se trata de una máquina Windows donde tenemos un servicio corriendo, el cual debemos analizar y crear el script para su explotación."
+date: 2022-07-14
 classes: wide
 header:
-  teaser: /assets/images/brainstorm/portada.png
+  teaser: /assets/images/brainstorm/portada.jpg
   teaser_home_page: true
 categories:
   - Comunidad

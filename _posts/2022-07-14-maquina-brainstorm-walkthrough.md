@@ -25,7 +25,7 @@ tags:
 # Introducción
 La máquina se encuentra en [TryHackMe](https://tryhackme.com/room/brainstorm). Es una máquina Windows que cuenta con un servicio vulnerable a Buffer Overflow. Para explotarlo, deberemos primero pasar el binario a una máquina donde podamos replicar los ataques a fin de obtener el script que logre vulnerarlo. Al final, solo ejecutaremos dicho script en la máquina víctima.
 
-Para una introducción y algo de teoría sobre lo que es un buffer overflow, te recomiendo mi guía que hice hace un tiempo: [Introducción al Buffer Overflow](https://blu3ming.github.io/brainstorm-introduccion-protostar-stack0-1). Tampoco me detendré a explicar a detalle cada paso que estoy realizando; para ello, puedes revisar la guía de la room [Buffer Overflow Prep](https://blu3ming.github.io/maquina-bof-walkthrough/) donde también se vulnera un binario en Windows con ayuda de Immunity Debugger.
+Para una introducción y algo de teoría sobre lo que es un buffer overflow, te recomiendo mi guía que hice hace un tiempo: [Introducción al Buffer Overflow](https://blu3ming.github.io/bof-introduccion-protostar-stack0-1). Tampoco me detendré a explicar a detalle cada paso que estoy realizando; para ello, puedes revisar la guía de la room [Buffer Overflow Prep](https://blu3ming.github.io/maquina-bof-walkthrough/) donde también se vulnera un binario en Windows con ayuda de Immunity Debugger.
 
 # Escaneo de puertos
 Iniciamos con un escaneo básico con **nmap** en busca de puertos abiertos en el sistema víctima:

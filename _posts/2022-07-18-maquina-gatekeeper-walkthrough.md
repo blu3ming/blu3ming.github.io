@@ -206,6 +206,8 @@ Dando un vistazo en los Pull Requests del repositorio me encuentro con que algui
 
 Volviendo a ejecutar el script, vemos que este nos regresa las credenciales en tecto claro:
 
+    python firepwd.py
+
     mayor:8CL701N78MdrCIsV
 
 ![29]

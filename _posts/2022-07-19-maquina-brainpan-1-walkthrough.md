@@ -34,9 +34,9 @@ Posteriormente, para escalar a root debemos ejecutar un binario personlizado que
 Sin embargo, me di cuenta de que nadie más ha hecho un writeup que contemple este último paso solo por aprender y emplear el sistema como playground para Buffer Overflow de sistemas Linux (y con ASLR activado), así que supongo que seré el primero.
 
 # Índice
-1. [Escaneo de puertos](escaneo-de-puertos)
-2. [Servicio HTTP](servicio-http)
-3. [Segundo apartado](#id3)
+1. [Escaneo de puertos](#escaneo-de-puertos)
+2. [Servicio HTTP](#servicio-http)
+3. [Análisis del servicio Brainpan](#analisis-del-servicio-brainpan)
 4. [Segundo apartado](#id4)
 5. [Segundo apartado](#id5)
 6. [Segundo apartado](#id6)
@@ -51,7 +51,7 @@ Sin embargo, me di cuenta de que nadie más ha hecho un writeup que contemple es
 15. [Segundo apartado](#id15)
 
 Escaneo de puertos
-===================
+==================================================================================================================
 Verificamos que se trata de una máquina Linux por medio de una traza ICMP.
 
 ![1]
@@ -76,8 +76,8 @@ Lo corroboramos con un *whatweb*:
 
 ![4]
 
-Servicio http
-===================
+Servicio HTTP
+==================================================================================================================
 Si entramos por medio de un navegador al servicio web veremos una infografía sobre código seguro y su importancia.
 
 ![5]
@@ -92,7 +92,8 @@ Dentro de este nos encontraremos con un binario de Windows llamado **brainpan.ex
 
 ![7]
 
-# Análisis del servicio Brainpan <a name="id3"></a>
+Análisis del servicio Brainpan
+==================================================================================================================
 Probamos conectarnos a este servicio por medio de netcat:
 
     nc 10.10.113.69 9999
@@ -105,7 +106,8 @@ Vemos que la entrada solicita una contraseña para acceder a lo que parece ser e
 
 Este nos responde con el mensaje **ACCESS DENIED**. Ya tenemos un caso base.
 
-# Análisis del BoF y creación del exploit <a name="id4"></a>
+Análisis del BoF y creación del exploit
+==================================================================================================================
 Para corroborar eso último, mandamos una enorme cantidad de caracteres para ver si el servicio logra crashear. Se intentó con 1000 caracteres:
 
     Con esto generamos la cantidad de caracteres necesarios:
@@ -171,7 +173,8 @@ Ya con todo listo, lo ejecutamos con una consola aparte en escucha con ayuda de 
 
 ![19]
 
-# Comprometiendo el sistema original <a name="id5"></a>
+Comprometiendo el sistema original
+==================================================================================================================
 Ya que vimos que el script funciona, comprometemos el sistema original solo cambiando la IP destino:
 
 ![20]
@@ -182,7 +185,8 @@ Recordemos que este sistema es un Linux, no un Windows. Me pregunto si de casual
 
 Nota: Obtenemos una consola que asimila a una cmd dado que el payload de msfvenom lo generamos para este sistema (Windows), solo sería cuestión de modificarlo para que retorne una reverse shell en un sistema Linux y volver a ejecutar el exploit. Como desconocía esto, tardé un poco en escapar de la consola devuelta para poder entrar en una **bash**.
 
-# Obteniendo una bash <a name="id6"></a>
+Obteniendo una bash
+==================================================================================================================
 En este momento no entiendo cómo es que tengo una cmd si se supone que se trata de un sistema Linux, así que trato de irme a la raíz para corroborar esto último con la estructura de directorios:
 
 ![22]
@@ -209,7 +213,8 @@ Como no me preocupé por hacer primero una enumeración completa de vectores par
 
 Reitero, lo siguiente no es necesario y puedes saltar hasta el último apartado para terminar de comprometer la máquina.
 
-# Buffer Overflow en Linux <a name="id7"></a>
+Buffer Overflow en Linux
+==================================================================================================================
 Listamos aquellos binarios que cuenten con permisos SUID, y vemos uno en particular que no es propio del sistema:
 
     /usr/local/bin/validate
@@ -232,7 +237,8 @@ En este caso, copiamos el binario en nuestra máquina de atacante para poder deb
 
 ![30]
 
-# Verificando el modo de aleatorización de memoria <a name="id8"></a>
+Verificando el modo de aleatorización de memoria
+==================================================================================================================
 Linux tiene una forma peculiar de proteger el sistema contra Buffer Overflows, y uno de ellos es la aleatorización de registros de memoria (ASLR). Este hace que la dirección base de las bibliotecas empleadas por los binarios del sistema sea aleatoria con cada ejecución, por lo que no podemos simplemente explotar el BoF con una dirección y esperar que sea la misma en la siguiente ejecución.
 
 Recordemos que la mayor parte del sistema Unix está escrito en C, razón por la cual muchas de sus utilidades emplean la biblioteca **libc** para acceder a las instrucciones de código necesarias. Esta biblioteca es la que cambia de ubicación con cada ejecución si el ASLR está activado (valor 1 o 2), y será la misma con cada ejecución si se encuentra deshabilitado (valor 0).
@@ -245,7 +251,8 @@ Para corroborar si se encuentra habilitado o no, debemos ver el contenido del si
 
 Como podemos observar, en el sistema este se encuentra con un valor 2, lo que quiere decir que se encuentra habilitado por defecto (a efectos prácticos, 1 y 2 son lo mismo). Esto complica las cosas, pero no las imposibilita en lo absoluto, solo tendremos que notar un cierto comportamiento que esta aleatorización tiene (recordemos que en computación, no existe la aleatoriedad per se). Para lograr el Buffer Overflow en un sistema con estas características, empleamos una técnica conocida como **ret2libc**.
 
-# Encontrando el valor del offset <a name="id9"></a>
+Encontrando el valor del offset
+==================================================================================================================
 Igual que en un binario de Windows, primero debemos encontrar el valor del offset necesario para sobreescribir el buffer y llegar hasta el registro EIP (siguiente instrucción).
 
 Para ello, empleamos el programa **gdb** junto con la extensión **peda**. GDB viene instalado por defecto en Kali, pero *peda* deberemos instalarlo por separado con las siguientes instrucciones:
@@ -287,7 +294,8 @@ Con esto le indicamos a la herramienta que queremos realizar una consulta (-q) e
 
 Vemos que nos regresa un offset de 116, por lo que guardamos este valor por ahora.
 
-# Determinando la dirección base del libc <a name="id10"></a>
+Determinando la dirección base del libc
+==================================================================================================================
 Como bien se explicaba anteriormente, esta dirección cambia con cada ejecución debido a que el sistema cuenta con el ASLR activado (y la única manera de deshabilitarlo es siendo usuario root). Sin embargo, como en computación solo existe el pseudoaleatorismo, la ubicación del *libc* sigue un cierto patrón.
 
 Y es que, cada ciertas ejecuciones, la dirección se repite en ocasiones, o bien sigue un patrón determinado. Para poder consultar la dirección de esta biblioteca, ejecutamos lo siguiente:
@@ -314,7 +322,8 @@ Este archivo contendrá las direcciones del libc obtenidas con cada ejecución d
 
     uniq -D address //Imprime solo las líneas que se encuentren duplicadas en el archivo. Seleccionamos cualquiera de ellas y la guardamos por ahora.
 
-# Encontrando el offset de system, exit y bash <a name="id11"></a>
+Encontrando el offset de system, exit y bash
+==================================================================================================================
 A diferencia de el Buffer Overflow en Windows, aquí no necesitamos saltar al ESP ni cargar nuestro payload (eso se hace cuando no tenemos el ASLR activado). Aquí solo necesitamos hacer llamadas al sistema para poder spawnear una bash. Para ello, necesitamos de las instrucciones **system**, **exit** y, por supuesto, **/bin/bash**.
 
 Esto se debe a que en C, para spawnear una bash se requiere de un código como el que sigue:

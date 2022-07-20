@@ -320,6 +320,8 @@ Por lo tanto, se concluye que los 11 puertos escaneados (entre el 130 y el 140) 
 
 ![30]
 
+El script resultante puedes consultarlo en mi [GitHub](https://github.com/blu3ming/PortScan-Powershell).
+
 [1]:/assets/images/powershell/1.png
 [2]:/assets/images/powershell/2.png
 [3]:/assets/images/powershell/3.png

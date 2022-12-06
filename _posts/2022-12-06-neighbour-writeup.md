@@ -1,11 +1,11 @@
 ---
 layout: single
-title: Neighbour Machine - TryHackMe
-excerpt: "This is a very easy machine for beginners. However, we are going to resolve it step by step, learning about code review and the IDOR vulnerability."
+title: Neighbour Room - TryHackMe
+excerpt: "This is a very easy room for beginners. However, we are going to resolve it step by step, learning about code review and the IDOR vulnerability."
 date: 2022-12-06
 classes: wide
 header:
-  teaser: /assets/images/neighbour/portada.png
+  teaser: /assets/images/neighbor/portada.png
   teaser_home_page: true
 categories:
   - Comunidad
@@ -17,7 +17,7 @@ tags:
 ---
 
 # Introduction
-The Neighbor machinecan be found at [TryHackMe](https://tryhackme.com/room/neighbour). It is a very easy machine for those people who just entered the world of cybersecurity and that allows them to understand concepts such as code review and what an IDOR is.
+The Neighbor room can be found at [TryHackMe](https://tryhackme.com/room/neighbour). It is a very easy machine for those people who just entered the world of cybersecurity and that allows them to understand concepts such as code review and what an IDOR is.
 
 We will solve the room step by step until obtaining the requested flag, explaining in detail each aspect of the process for those who are just starting out in this world.
 

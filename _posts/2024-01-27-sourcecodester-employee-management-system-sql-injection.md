@@ -25,7 +25,7 @@ tags:
 - Public Disclosure: N/A
 - Software Link: [https://www.sourcecodester.com/php/16999/employee-management-system.html](https://www.sourcecodester.com/php/16999/employee-management-system.html)
 - CVE Assigned: Pending
-- Author: Josue Mier (aka blu3ming)
+- Author: Josué Mier (aka blu3ming)
 
 ## Description:
 SQL injection is a type of cyber attack where attackers exploit vulnerabilities in input fields of web applications to insert malicious SQL code. By doing so, they can gain unauthorized access to databases, steal sensitive data, or even manipulate database contents. Preventative measures, such as input validation and parameterized queries, are essential for protecting against SQL injection attacks and maintaining database security.

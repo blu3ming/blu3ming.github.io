@@ -19,11 +19,11 @@ tags:
 ## Details:
 - Date: 27-01-2024
 - Affected Version: v1.0
-- Vendor Homepage: (https://www.sourcecodester.com/)[https://www.sourcecodester.com/]
+- Vendor Homepage: [https://www.sourcecodester.com/](https://www.sourcecodester.com/)
 - Vendor Notification: 27-01-2024
 - Advisory Publication: 27-01-2024 (with no technical details)
 - Public Disclosure: N/A
-- Software Link: (https://www.sourcecodester.com/php/16999/employee-management-system.html)[https://www.sourcecodester.com/php/16999/employee-management-system.html]
+- Software Link: [https://www.sourcecodester.com/php/16999/employee-management-system.html](https://www.sourcecodester.com/php/16999/employee-management-system.html)
 - CVE Assigned: Pending
 - Author: Josue Mier (aka blu3ming)
 

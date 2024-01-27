@@ -104,7 +104,7 @@ analytics:
 author:
   name             : "Blu3ming"
   avatar           : "/assets/images/avatar.jpg" # path of avatar image, e.g. "/assets/images/bio-photo.jpg"
-  bio              : "Computer Engineer | Pentester | eJPT | AZ-900 | Red Team | Always trying to learn something new"
+  bio              : "Cybersecurity Consultant | Pentester | eJPT | PNPT | eMAPT | AZ-900"
   location         : "CDMX"
   uri              :
   home             : # null (default), "absolute or relative url to link to author home"

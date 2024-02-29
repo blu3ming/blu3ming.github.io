@@ -32,6 +32,7 @@ SQL injection is a type of cyber attack where attackers exploit vulnerabilities 
 ## Affected Locations:
 - `http://localhost/employee_akpoly/Account/login.php`, txtemail parameter
 - emloyee_akpoly/Account/login.php, Line 18
+
 ## Proof of Concept:
 As observed in the screenshot below, when we send a SQL query with a time delay in the "txtemail" field for the Employees' login portal, the web application takes the established time (10 seconds) to return a response, suggesting a potential time-based blind SQL injection vulnerability.
 

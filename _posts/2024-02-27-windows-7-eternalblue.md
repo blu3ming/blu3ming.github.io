@@ -158,7 +158,7 @@ If you plan to run other tools within the machine such as Chisel or Mimikatz, yo
 
 ![24]
 
-To resolve this, you will need to download and install the Security Update for Windows 7 for x64-based Systems from: https://www.microsoft.com/en-us/download/details.aspx?id=47442
+To resolve this, you will need to download and install the Security Update for Windows 7 for x64-based Systems from: [https://www.microsoft.com/en-us/download/details.aspx?id=47442](https://www.microsoft.com/en-us/download/details.aspx?id=47442)
 
 Once installed, you shouldn't encounter any more issues.
 

@@ -104,7 +104,7 @@ analytics:
 author:
   name             : "Blu3ming"
   avatar           : "/assets/images/avatar.jpg" # path of avatar image, e.g. "/assets/images/bio-photo.jpg"
-  bio              : "Cybersecurity Consultant | Pentester | eJPT | PNPT | eMAPT | AZ-900"
+  bio              : "Application Security Engineer | Pentester | eCPPT | PNPT | CBBH | eMAPT | AZ-900"
   location         : "CDMX"
   uri              :
   home             : # null (default), "absolute or relative url to link to author home"
@@ -120,7 +120,7 @@ author:
   keybase          :
   instagram        :
   lastfm           :
-  linkedin         : "ljmier314" # (the last part of your profile url, e.g. https://www.linkedin.com/in/john-doe-12345678)
+  linkedin         : "ljmier" # (the last part of your profile url, e.g. https://www.linkedin.com/in/john-doe-12345678)
   pinterest        :
   soundcloud       :
   stackoverflow    : # "123456/username" (the last part of your profile url, e.g. https://stackoverflow.com/users/123456/username)

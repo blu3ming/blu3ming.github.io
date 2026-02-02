@@ -16,10 +16,10 @@ minimal_mistakes_skin    : "dark" # "air", "aqua", "contrast", "dark", "dirt", "
 
 # Site Settings
 locale                   : "en-US"
-title                    : "Blu3ming | Blog de ciberseguridad"
+title                    : "Blu3ming | Blog"
 title_separator          : "-"
 name                     : "Blu3ming"
-description              : "Blog sobre ciberseguridad. Scripts y Writeups para máquinas de Vulnhub, TryHackMe y HackTheBox."
+description              : "Blog about cybersecurity. Scripts, Writeups and Reviews from machines and certifications."
 url                      : "https://blu3ming.github.io" # the base hostname & protocol for your site e.g. "https://mmistakes.github.io"
 baseurl                  : # the subpath of your site, e.g. "/blog"
 repository               : "blu3ming/blu3ming.github.io" # GitHub username/repo-name e.g. "mmistakes/minimal-mistakes"
@@ -104,7 +104,7 @@ analytics:
 author:
   name             : "Blu3ming"
   avatar           : "/assets/images/avatar.jpg" # path of avatar image, e.g. "/assets/images/bio-photo.jpg"
-  bio              : "Application Security Engineer | Pentester | OSWA | CWES | OSWP | eCPPT | PNPT | AZ-900"
+  bio              : "Application Security Engineer | Pentester | OSWA | CWES | OSCP+ | OSWP | eCPPT | PNPT | AZ-900"
   location         : "MX"
   uri              :
   home             : # null (default), "absolute or relative url to link to author home"

@@ -1,6 +1,6 @@
 ---
 layout: single
-title: Beyond Try Harder: My OSCP Preparation Journey
+title: "Beyond Try Harder: My OSCP Preparation Journey"
 excerpt: "A couple of weeks ago, I completed one of the most significant milestones of my professional life. I decided to put together this post to share my preparation strategy."
 date: 2026-02-02
 classes: wide

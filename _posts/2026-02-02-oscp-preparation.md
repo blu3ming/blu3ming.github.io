@@ -5,7 +5,7 @@ excerpt: "A couple of weeks ago, I completed one of the most significant milesto
 date: 2026-02-02
 classes: wide
 header:
-  teaser: /assets/images/oscp-prep/logo.png
+  teaser: /assets/images/oscp-prep/logo2.png
   teaser_home_page: true
 categories:
   - OSCP
